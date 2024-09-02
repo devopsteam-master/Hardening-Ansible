@@ -1,0 +1,48 @@
+---
+# vars file for harden
+sshd_config:
+  #  PermitRootLogin: "without-password"
+  #  ListenAddress: "0.0.0.0."
+  #  PasswordAuthentication: "no"
+  Port: "3232"
+  # AllowUsers:
+  # AllowGroups:
+fail2ban:
+  backend: "systemd"
+  bantime: "20m"
+  findtime: "15m"
+  maxretry: "4"
+
+iptables:
+  network_adapter_access:
+    - eth0
+    - wlan0
+
+  tcp_port_access:
+    - 80    # HTTP
+    - 443   # HTTPS
+    - 8100  # Custom port
+    - 8080
+  udp_port_access:
+    - 53    # DNS
+    - 123   # NTP
+
+  # vars/main.yml
+grub:
+  grub_audit_cmdline: "audit=1"
+  grub_audit_backlog_cmdline: "audit_backlog_limit=8192"
+
+auditd:  
+  auditd_action_mail_acct: "root"
+  auditd_admin_space_left_action: "halt"
+  auditd_disk_error_action: "halt"
+  auditd_disk_full_action: "halt"
+  auditd_max_log_file: "8"
+  auditd_max_log_file_action: "rotate"
+  auditd_num_logs: "5"
+  auditd_space_left: "75"
+  auditd_space_left_action: "email"
+  auditd_apply_audit_rules: true
+
+my_user: "root"
+ssh_key_file: "/home/user/.ssh/id_rsa.pub"
