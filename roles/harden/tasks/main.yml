@@ -24,6 +24,8 @@
 - name: Setup passwdpolicy
   import_tasks: passwdpolicy.yml
 
-- name: Include public-key.yml
+- name: Include public-key
   import_tasks: public-key.yml
 
+- name: Include ssh-inventory
+  import_tasks: change-ssh-inventory.yml
