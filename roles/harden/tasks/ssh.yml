@@ -8,7 +8,7 @@
 - name: Copy banner file to destination
   ansible.builtin.copy:
     src: banner
-    dest: /etc/issue.net
+    dest: /etc/issue
     mode: '0644'
   notify: Restart_SSH    
 

@@ -46,3 +46,27 @@ auditd:
 
 my_user: "root"
 ssh_key_file: "/home/user/.ssh/id_rsa.pub"
+
+CLOUDFLARE_API_TOKEN: 'O4f-hl5dpYu_EAkKURl0hkf3e84gwXchHUCm1zSD' 
+Domain_Name: "webmoney.ir"  
+Record_Name: "test1"
+
+  #cloudflare_token: "{{ lookup('env', 'CLOUDFLARE_API_TOKEN') }}"  # API توکن
+zone_name: "webmoney.ir"  # نام دامنه
+dns_records:
+  - name: "st1.webmoney.ir"
+    type: "A"
+    value: "192.168.1.1"
+  - name: "st2"
+    type: "A"
+    value: "192.168.1.2"
+      #  - name: "record3.example.com"
+      #    type: "CNAME"
+      #    value: "example.com"
+      #  - name: "record4.example.com"
+      #    type: "MX"
+      #    value: "mail.example.com"
+      #    priority: 10  # رکوردهای MX نیاز به priority دارند
+      #  - name: "recordN.example.com"
+      #    type: "A"
+      #    value: "192.168.1.N"  

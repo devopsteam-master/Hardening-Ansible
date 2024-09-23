@@ -19,7 +19,18 @@
     - lynis
     - iptables-persistent
     - ntp
+    - debsums
+    - apt-show-versions
     - apt-listchanges
     - auditd
     - libpam-pwquality
+    - rkhunter
+    - ossec-hids
+    - clamav
+    - aptitude
+    - libpam-tmpdir
+    - network-manager
 
+- name: run aptitued purge
+  ansible.builtin.command:
+    cmd: aptitude purge

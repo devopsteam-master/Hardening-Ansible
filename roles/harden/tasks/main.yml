@@ -24,8 +24,18 @@
 - name: Setup passwdpolicy
   import_tasks: passwdpolicy.yml
 
+- name: Setup dnsrecord
+  import_tasks: dnsrecord.yml
+
+- name: Setup logindefs
+  import_tasks: logindefs.yml
+
 - name: Include public-key
   import_tasks: public-key.yml
 
 - name: Include ssh-inventory
   import_tasks: change-ssh-inventory.yml
+
+    
+- name: Lynis Reporty
+  import_tasks: lynis.yml

@@ -1,0 +1,7 @@
+- name: Run Lynis audit
+  command: lynis audit system --no-colors
+  register: lynis_output
+
+- name: Display Lynis output
+  debug:
+    var: lynis_output.stdout
