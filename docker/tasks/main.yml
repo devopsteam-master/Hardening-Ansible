@@ -1,8 +1,0 @@
----
-- name: install docker
-  import_tasks: install.yml
-  tags: install
-
-- name: install and config v2ray
-  import_tasks: v2ray.yml
-  tags: v2ray
