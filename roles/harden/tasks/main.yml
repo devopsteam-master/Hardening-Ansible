@@ -15,8 +15,8 @@
 - name: Setup Auditd
   import_tasks: auditd.yml
     
-#- name: Setup NTP
-#  import_tasks: ntp.yml
+- name: Setup NTP
+  import_tasks: ntp.yml
     
 - name: Setup Firewall
   import_tasks: iptables.yml
@@ -24,8 +24,8 @@
 - name: Setup passwdpolicy
   import_tasks: passwdpolicy.yml
 
-#- name: Setup dnsrecord
-#  import_tasks: dnsrecord.yml
+- name: Setup dnsrecord
+  import_tasks: dnsrecord.yml
 
 - name: Setup logindefs
   import_tasks: logindefs.yml
